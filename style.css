@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-contenedor img {
+    width: 150px;
+    height: 141px;
+    filter: invert(43%) sepia(85%) saturate(7500%) hue-rotate(345deg) brightness(100%) contrast(105%);
+
+}
+
+.ws-link {
+    position: fixed;
+    width: 90px;
+    height: 90px;
+    z-index: 3;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    animation: scaleWithShadow 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes scaleWithShadow {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 4px 8px #40C351);
+    }
+
+    33% {
+        transform: scale(1.071);
+        filter: drop-shadow(0 5px 10px #40C351);
+    }
+
+    66% {
+        transform: scale(1.143);
+        filter: drop-shadow(0 6px 12px #40C351);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 4px 8px #40C351);
+    }
+}
+
+.ws-link::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: rgba(255, 255, 255, 0.95);
+    color: #37995d;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(37, 211, 101, 0.363);
+    transition: all 0.4s ease;
+}
+
+.ws-link:hover::before {
+    content: "Pide Aquí ";
+    transform: translateX(-70%) scale(1);
+}
+
+.contenedor-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0003;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+
+}
+
+.contenedor-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.884);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.texto-video {
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    max-width: 800px;
+    padding: 10px 30px;
+    font-family: Montserrat thin;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 70px;
+
+}
+
+.texto-video p {
+    font-size: 25px;
+    margin-top: 12px;
+    letter-spacing: 1.2px;
+    font-weight: 400;
+}
+
+/*Navegacion barra*/
+
+nav {
+    background-color: #fff;
+    box-shadow: 0 0 20px 3px #0003;
+    margin: 0;
+    display: flex;
+    font-family: Montserrat;
+    position: sticky;
+    top: 0;
+    font-weight: 500;
+
+}
+
+.nav-ul {
+    display: flex;
+    gap: 55px;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 18px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.item-ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.item-ul a {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #000;
+    padding: 10px 15px;
+    border-radius: 25px;
+    background-color: white;
+    font-size: 16px;
+    transition: background-color 1s, color 1s, box-shadow 1s, transform 1s;
+}
+
+.item-ul img {
+
+    width: 24px;
+    height: 24px;
+    transition: filter 0.3s ease;
+
+}
+
+.item-ul a:hover img {
+    filter: brightness(0) invert(1);
+}
+
+.item-ul a:hover {
+
+    background-color: #c21;
+    color: #fff;
+    box-shadow: 0 0 10px 5px rgba(204, 37, 37, 0.671);
+    transform: translateY(-3px);
+}
+
+
+/*Seccion Promociones*/
+
+.promociones {
+    height: 80vh;
+    margin: 0 7.3%;
+    font-family: Poppins;
+}
+
+.Encabezado-seccion {
+    text-align: center;
+    padding: 3% 20px;
+}
+
+.Encabezado-seccion h2 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.Encabezado-seccion p {
+    font-size: 1.1rem;
+    inline-size: 1.5;
+    color: #666;
+}
+
+.tarjetas-productos {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.producto-tarjeta {
+    width: 22rem;
+    overflow: hidden;
+    border-radius: 25px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.imagen-producto {
+    background-color: #ED494B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 250px;
+}
+
+.imagen-producto img {
+    width: 90%;
+    height: 90%;
+    border-radius: 20px;
+}
+
+.producto-info h3 {
+    padding: 1.2rem 0 0.3rem 0;
+    text-align: center;
+    font-size: 1.4rem;
+    color: #333;
+
+}
+
+.producto-info p {
+    padding: 0.2rem 0.6rem 0.6rem 0.7rem;
+    color: #666;
+    font-size: 0.95rem;
+    text-wrap: pretty;
+
+}
+
+.precio-producto {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ff2e34;
+    padding: 1rem;
+    text-align: center;
+
+}
+
+
+@media screen and (max-width:600px) {
+
+    .texto-video {
+        min-height: 80%;
+    }
+
+    .texto-video h1 {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+
+    .nav-ul {
+        gap: 5px;
+    }
+
+    .item-ul a {
+        gap: 4px;
+        font-size: 14px;
+    }
+
+    .item-ul img {
+        width: 20px;
+        height: 20px;
+
+    }
+}
+
+@media screen and (max-width:450px) {
+
+    .texto-video {
+        min-height: 88%;
+        opacity: 0.8;
+    }
+
+    .texto-video h1 {
+        font-size: 35px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .nav-ul {
+        gap: 5px;
+        flex-wrap: nowrap;
+        overflow: auto;
+        padding-left: 10px;
+    }
+
+    .item-ul a {
+        gap: 5px;
+        font-size: 10px;
+    }
+
+    .item-ul img {
+        width: 10px;
+        height: 10px;
+
+    }
+
+    .promociones {
+        margin: 3%;
+    }
+
+    .tarjetas-productos {
+        flex-wrap: nowrap;
+        overflow: auto;
+    }
+
+    .producto-tarjeta {
+        min-width: 20rem;
+        margin: 1.2rem;
+    }
+
+
+    .Encabezado-seccion h2 {
+        font-size: 2.1rem;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .Encabezado-seccion p {
+        font-size: 1rem;
+        inline-size: 1.5;
+        color: #666;
+        text-wrap: pretty;
+        margin-top: 10px;
+    }
+
+
+}
